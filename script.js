@@ -5,26 +5,55 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
-
     
     if (playerSelection === "rock" && computerSelection === "paper") {
-        return "You lose! Paper beats Rock";
+        return "computer";
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You win! Paper beats Rock";
+        return "player";
     }
         
 
     if (playerSelection === "scissors" && computerSelection === "rock") {
-        return "You lose! Rock beats Scissors";
+        return "computer";
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You win! Rock beats Scissors";
+        return "player";
     }
 
     if (playerSelection === "paper" && computerSelection === "scissors") {
-        return "You lose! Scissors beat Paper";
+        return "computer";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You win! Scissors beat Paper"
+        return "player";
     }
 
+    if (playerSelection === computerSelection) {
+        return "draw";
+    }
+}
 
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i<5; i++) {
+        let playerSelection = prompt("Pick rock/paper/scissors")
+        let result = playRound(playerSelection, getComputerChoice());
+        
+        
+        if (result === "player") {
+            playerScore++;
+            console.log("Player wins!");
+        } else if (result === "computer") {
+            computerScore++;
+            console.log("Computer wins!");
+        } else {
+            console.log("Draw!")
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log("You win!");
+    } else if (computerScore > playerScore) {
+        console.log("You lose :(")
+    } else {
+        console.log("It's a draw!")
+    }
 }
