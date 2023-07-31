@@ -27,10 +27,10 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection === "paper" && computerSelection === "scissors") {
-        showText("✂️ beat 📃.");
+        showText("✂️ beats 📃.");
         return "computer";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        showText("✂️ beat 📃.");
+        showText("✂️ beats 📃.");
         return "player";
     }
 
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let scoreDisplay = document.querySelector(".score-display");
 
     [rock, paper, scissors].forEach(item => item.addEventListener("click", e => {
-        let result = playRound(item.className, getComputerChoice());
+        let result = playRound(item.classList[0], getComputerChoice());
         if (result === "player") {
             playerScore++;
         } else if (result === "computer") {

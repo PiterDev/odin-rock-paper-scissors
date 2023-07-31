@@ -7,16 +7,25 @@
     <title>Rock Paper Scissors</title>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <button class="rock">🪨</button>
-    <button class="paper">📃</button>
-    <button class="scissors">✂️</button>
+    <h1>Rock Paper Scissors</h1>
+    <p>First to five wins!</p>
+
     <div class="score">
-        <p class="score-display"></p>
+        <p class="score-display">0 - 0</p>
     </div>
-    <div class="results">
-        <p class="result-text"></p>
+    <div class="site-body">
+        <div class="choices">
+            <div class="rock button"><img src="img/rock.svg"></div>
+            <div class="paper button"><img src="img/paper.svg"></div>
+            <div class="scissors button"><img src="img/scissors.svg"></div>
+        </div>
+
+        <div class="results">
+            <p class="result-text">Choose your weapon!</p>
+        </div>
     </div>
 </body>
 </html>
